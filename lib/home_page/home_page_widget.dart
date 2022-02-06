@@ -188,9 +188,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                     String>(
                                                                   getJsonField(
                                                                     newsItem,
-                                                                    r'''$.title''',
+                                                                    r'''$[:].title''',
                                                                   ).toString(),
-                                                                  'Titel',
+                                                                  'Title',
                                                                 ),
                                                                 style:
                                                                     FlutterFlowTheme
@@ -209,7 +209,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       String>(
                                                                     getJsonField(
                                                                       newsItem,
-                                                                      r'''$.teaser''',
+                                                                      r'''$[:].teaser''',
                                                                     ).toString(),
                                                                     'Teaser',
                                                                   ),
