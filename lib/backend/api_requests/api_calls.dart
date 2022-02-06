@@ -20,4 +20,9 @@ class GETAllNewsCall {
       returnBody: true,
     );
   }
+
+  static dynamic news(dynamic response) => getJsonField(
+        response,
+        r'''$[:]''',
+      );
 }
