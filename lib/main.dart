@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:feerd/home_page/home_page_widget.dart';
+import 'package:feerd/dashboard_page/dashboard_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,8 +21,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale _locale;
+  ThemeMode _themeMode = ThemeMode.system;
 
   void setLocale(Locale value) => setState(() => _locale = value);
+  void setThemeMode(ThemeMode mode) => setState(() {
+        _themeMode = mode;
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +42,10 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [
         Locale('de', ''),
       ],
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePageWidget(),
+      theme: ThemeData(brightness: Brightness.light),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      themeMode: _themeMode,
+      home: DashboardPageWidget(),
     );
   }
 }
