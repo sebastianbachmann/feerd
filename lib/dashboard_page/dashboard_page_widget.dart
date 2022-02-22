@@ -231,37 +231,39 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
                           r'''$''',
                         )?.toList() ??
                         [];
-                    return Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: List.generate(news.length, (newsIndex) {
-                        final newsItem = news[newsIndex];
-                        return ListTile(
-                          title: Text(
-                            getJsonField(
-                              newsItem,
-                              r'''$.title''',
-                            ).toString(),
-                            style: FlutterFlowTheme.of(context).title3,
-                          ),
-                          subtitle: Text(
-                            getJsonField(
-                              newsItem,
-                              r'''$.teaser''',
-                            ).toString(),
-                            style: FlutterFlowTheme.of(context).subtitle2,
-                          ),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF303030),
-                            size: 20,
-                          ),
-                          tileColor: Color(0xFFF5F5F5),
-                          dense: false,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        );
-                      }),
+                    return SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: List.generate(news.length, (newsIndex) {
+                          final newsItem = news[newsIndex];
+                          return ListTile(
+                            title: Text(
+                              getJsonField(
+                                newsItem,
+                                r'''$.title''',
+                              ).toString(),
+                              style: FlutterFlowTheme.of(context).title3,
+                            ),
+                            subtitle: Text(
+                              getJsonField(
+                                newsItem,
+                                r'''$.teaser''',
+                              ).toString(),
+                              style: FlutterFlowTheme.of(context).subtitle2,
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF303030),
+                              size: 20,
+                            ),
+                            tileColor: Color(0xFFF5F5F5),
+                            dense: false,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          );
+                        }),
+                      ),
                     );
                   },
                 );
