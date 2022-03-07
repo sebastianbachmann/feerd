@@ -21,3 +21,16 @@ class GETAllNewsCall {
     );
   }
 }
+
+class FeerdNewsCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Feerd News',
+      apiUrl: 'https://feerd.directus.app/items/news',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+    );
+  }
+}

@@ -209,7 +209,7 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
             child: FutureBuilder<ApiCallResponse>(
-              future: GETAllNewsCall.call(),
+              future: FeerdNewsCall.call(),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
@@ -223,12 +223,12 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
                     ),
                   );
                 }
-                final columnGETAllNewsResponse = snapshot.data;
+                final columnFeerdNewsResponse = snapshot.data;
                 return Builder(
                   builder: (context) {
                     final news = getJsonField(
-                          (columnGETAllNewsResponse?.jsonBody ?? ''),
-                          r'''$''',
+                          (columnFeerdNewsResponse?.jsonBody ?? ''),
+                          r'''$.data''',
                         )?.toList() ??
                         [];
                     return SingleChildScrollView(
