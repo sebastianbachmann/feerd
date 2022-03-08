@@ -22,6 +22,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Locale _locale;
   ThemeMode _themeMode = ThemeMode.system;
+  bool displaySplashImage = true;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+        Duration(seconds: 1), () => setState(() => displaySplashImage = false));
+  }
 
   void setLocale(Locale value) => setState(() => _locale = value);
   void setThemeMode(ThemeMode mode) => setState(() {
@@ -44,7 +52,17 @@ class _MyAppState extends State<MyApp> {
       ],
       theme: ThemeData(brightness: Brightness.light),
       themeMode: _themeMode,
-      home: DashboardPageWidget(),
+      home: displaySplashImage
+          ? Container(
+              color: Colors.transparent,
+              child: Builder(
+                builder: (context) => Image.asset(
+                  'assets/images/wappen-fuerth.svg',
+                  fit: BoxFit.fill,
+                ),
+              ),
+            )
+          : DashboardPageWidget(),
     );
   }
 }
