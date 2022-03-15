@@ -16,3 +16,16 @@ class FeerdNewsCall {
     );
   }
 }
+
+class FeerdRestaurantsCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Feerd Restaurants',
+      apiUrl: 'https://feerd.directus.app/items/restaurants',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+    );
+  }
+}
