@@ -1,4 +1,4 @@
-import '../flutter_flow/flutter_flow_icon_button.dart';
+import '../dashboard_page/dashboard_page_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,12 @@ class _PlaygroundsPageWidgetState extends State<PlaygroundsPageWidget> {
     super.initState();
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      Navigator.pop(context);
+      await Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => DashboardPageWidget(),
+        ),
+      );
     });
   }
 
@@ -32,20 +37,6 @@ class _PlaygroundsPageWidgetState extends State<PlaygroundsPageWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).bGColor,
         automaticallyImplyLeading: false,
-        leading: FlutterFlowIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30,
-          borderWidth: 1,
-          buttonSize: 60,
-          icon: Icon(
-            Icons.arrow_back_rounded,
-            color: Colors.white,
-            size: 30,
-          ),
-          onPressed: () {
-            print('IconButton pressed ...');
-          },
-        ),
         title: Text(
           'Spielplätze',
           style: FlutterFlowTheme.of(context).title2.override(
@@ -55,7 +46,7 @@ class _PlaygroundsPageWidgetState extends State<PlaygroundsPageWidget> {
               ),
         ),
         actions: [],
-        centerTitle: true,
+        centerTitle: false,
         elevation: 2,
       ),
       backgroundColor: Color(0xFFF5F5F5),

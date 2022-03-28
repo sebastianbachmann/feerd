@@ -1,7 +1,9 @@
+import '../dashboard_page/dashboard_page_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DailyLifePageWidget extends StatefulWidget {
@@ -13,6 +15,20 @@ class DailyLifePageWidget extends StatefulWidget {
 
 class _DailyLifePageWidgetState extends State<DailyLifePageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => DashboardPageWidget(),
+        ),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
