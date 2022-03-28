@@ -1,17 +1,16 @@
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MayorsPageWidget extends StatefulWidget {
-  const MayorsPageWidget({Key key}) : super(key: key);
+class DailyLifePageWidget extends StatefulWidget {
+  const DailyLifePageWidget({Key key}) : super(key: key);
 
   @override
-  _MayorsPageWidgetState createState() => _MayorsPageWidgetState();
+  _DailyLifePageWidgetState createState() => _DailyLifePageWidgetState();
 }
 
-class _MayorsPageWidgetState extends State<MayorsPageWidget> {
+class _DailyLifePageWidgetState extends State<DailyLifePageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -21,22 +20,8 @@ class _MayorsPageWidgetState extends State<MayorsPageWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).bGColor,
         automaticallyImplyLeading: false,
-        leading: FlutterFlowIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30,
-          borderWidth: 1,
-          buttonSize: 60,
-          icon: Icon(
-            Icons.arrow_back_rounded,
-            color: Colors.white,
-            size: 30,
-          ),
-          onPressed: () {
-            print('IconButton pressed ...');
-          },
-        ),
         title: Text(
-          'Bürgermeister',
+          'Täglliches Leben',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
                 color: Colors.white,
@@ -47,7 +32,16 @@ class _MayorsPageWidgetState extends State<MayorsPageWidget> {
         centerTitle: true,
         elevation: 2,
       ),
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [],
+          ),
+        ),
+      ),
     );
   }
 }

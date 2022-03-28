@@ -2,10 +2,9 @@ import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../imprint_page/imprint_page_widget.dart';
+import '../main.dart';
 import '../mayors_page/mayors_page_widget.dart';
-import '../playgrounds_page/playgrounds_page_widget.dart';
 import '../restaurants_page/restaurants_page_widget.dart';
-import '../tourism_page/tourism_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -125,7 +124,8 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
                     await Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => TourismPageWidget(),
+                        builder: (context) =>
+                            NavBarPage(initialPage: 'DailyLifePage'),
                       ),
                     );
                   },
@@ -134,33 +134,7 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
                       Icons.map_outlined,
                     ),
                     title: Text(
-                      'Tourismus & Freizeit',
-                      style: FlutterFlowTheme.of(context).title3,
-                    ),
-                    trailing: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Color(0xFF303030),
-                      size: 20,
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                ),
-                InkWell(
-                  onTap: () async {
-                    await Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PlaygroundsPageWidget(),
-                      ),
-                    );
-                  },
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.child_care,
-                    ),
-                    title: Text(
-                      'Spielplätze',
+                      'Tägliches Leben',
                       style: FlutterFlowTheme.of(context).title3,
                     ),
                     trailing: Icon(

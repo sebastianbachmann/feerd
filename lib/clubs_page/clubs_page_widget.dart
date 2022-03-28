@@ -4,14 +4,14 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MayorsPageWidget extends StatefulWidget {
-  const MayorsPageWidget({Key key}) : super(key: key);
+class ClubsPageWidget extends StatefulWidget {
+  const ClubsPageWidget({Key key}) : super(key: key);
 
   @override
-  _MayorsPageWidgetState createState() => _MayorsPageWidgetState();
+  _ClubsPageWidgetState createState() => _ClubsPageWidgetState();
 }
 
-class _MayorsPageWidgetState extends State<MayorsPageWidget> {
+class _ClubsPageWidgetState extends State<ClubsPageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -36,7 +36,7 @@ class _MayorsPageWidgetState extends State<MayorsPageWidget> {
           },
         ),
         title: Text(
-          'Bürgermeister',
+          'Vereine',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
                 color: Colors.white,
@@ -47,7 +47,16 @@ class _MayorsPageWidgetState extends State<MayorsPageWidget> {
         centerTitle: true,
         elevation: 2,
       ),
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [],
+          ),
+        ),
+      ),
     );
   }
 }

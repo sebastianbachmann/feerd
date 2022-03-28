@@ -29,3 +29,16 @@ class FeerdRestaurantsCall {
     );
   }
 }
+
+class FeerdKindergartensCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Feerd Kindergartens',
+      apiUrl: 'https://feerd.directus.app/items/kindergartens',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+    );
+  }
+}
