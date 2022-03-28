@@ -1,8 +1,8 @@
 import '../backend/api_requests/api_calls.dart';
+import '../daily_life_page/daily_life_page_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../imprint_page/imprint_page_widget.dart';
-import '../main.dart';
 import '../mayors_page/mayors_page_widget.dart';
 import '../restaurants_page/restaurants_page_widget.dart';
 import 'package:flutter/material.dart';
@@ -27,9 +27,9 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
         backgroundColor: FlutterFlowTheme.of(context).bGColor,
         automaticallyImplyLeading: true,
         title: Text(
-          'Feerd',
-          style: FlutterFlowTheme.of(context).title1.override(
-                fontFamily: 'Roboto',
+          'Aktuelles',
+          style: FlutterFlowTheme.of(context).title2.override(
+                fontFamily: 'Poppins',
                 color: Colors.white,
               ),
         ),
@@ -124,8 +124,7 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
                     await Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            NavBarPage(initialPage: 'DailyLifePage'),
+                        builder: (context) => DailyLifePageWidget(),
                       ),
                     );
                   },

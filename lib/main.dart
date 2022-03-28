@@ -8,7 +8,6 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'playgrounds_page/playgrounds_page_widget.dart';
-import 'daily_life_page/daily_life_page_widget.dart';
 import 'clubs_page/clubs_page_widget.dart';
 import 'kindergartens_page/kindergartens_page_widget.dart';
 
@@ -96,7 +95,6 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'PlaygroundsPage': PlaygroundsPageWidget(),
-      'DailyLifePage': DailyLifePageWidget(),
       'ClubsPage': ClubsPageWidget(),
       'KindergartensPage': KindergartensPageWidget(),
     };
@@ -119,14 +117,6 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: 'Spielplätze',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.agriculture_rounded,
-              size: 24,
-            ),
-            label: 'Vereine',
             tooltip: '',
           ),
           BottomNavigationBarItem(

@@ -35,13 +35,18 @@ class _ClubsPageWidgetState extends State<ClubsPageWidget> {
             print('IconButton pressed ...');
           },
         ),
-        title: Text(
-          'Vereine',
-          style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Poppins',
-                color: Colors.white,
-                fontSize: 22,
-              ),
+        title: InkWell(
+          onTap: () async {
+            Navigator.pop(context);
+          },
+          child: Text(
+            'Vereine',
+            style: FlutterFlowTheme.of(context).title2.override(
+                  fontFamily: 'Poppins',
+                  color: Colors.white,
+                  fontSize: 22,
+                ),
+          ),
         ),
         actions: [],
         centerTitle: true,
